@@ -13,13 +13,8 @@ endif
 
 " Let's get started!
 
-function! s:sub(str,pat,rep) abort
-  return substitute(a:str,'\v\C'.a:pat,a:rep,'')
-endfunction
-
 function! s:DirComplete(A,L,P) abort
-  let base = s:sub(g:jump_to_code_base, '^/', '')
-  let directories = map(glob(fnameescape(base) . '/*/', 1, 1), 'fnamemodify(v:val, ":h:t")')
+  let directories = map(glob(fnameescape(g:jump_to_code_base) . '/*/', 1, 1), 'fnamemodify(v:val, ":h:t")')
   return directories
 endfunction
 
