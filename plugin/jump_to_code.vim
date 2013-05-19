@@ -1,6 +1,6 @@
 " jump_to_code.vim
 " Maintainer:   James Conroy-Finn <http://jamesconroyfinn.com>
-" Version:      0.1
+" Version:      0.2
 
 if exists('g:loaded_jump_to_code') || &cp || v:version < 700
   finish
@@ -14,7 +14,8 @@ endif
 " Let's get started!
 
 function! s:DirComplete(A,L,P) abort
-  let directories = map(glob(fnameescape(g:jump_to_code_base) . '/*/', 1, 1), 'fnamemodify(v:val, ":h:t")')
+  let matches = split(globpath(fnameescape(g:jump_to_code_base), a:A . "*"), "\n")
+  let directories = map(matches, 'fnamemodify(v:val, ":t")')
   return directories
 endfunction
 
