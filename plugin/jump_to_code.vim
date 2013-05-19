@@ -32,6 +32,6 @@ function! s:Cd(dir)
   exe chdir . join([g:jump_to_code_base, a:dir], '/')
 endfunction
 
-command! -buffer -bar -bang -nargs=1 -complete=customlist,s:DirComplete C :execute s:Cd(<q-args>)
+command! -buffer -bar -bang -nargs=1 -complete=customlist,s:DirComplete JumpToCode :execute s:Cd(<q-args>)
 
 " vim:set sw=2 sts=2:
