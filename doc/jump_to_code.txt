@@ -1,0 +1,27 @@
+*jump_to_code.txt*  It jumps to your code quickly
+
+Author:  James Conroy-Finn <http://jamesconroyfinn.com>
+License: Same terms as Vim itself (see |license|)
+
+This plugin is only available if 'compatible' is not set.
+
+INTRODUCTION                                    *jump_to_code*
+
+This plugin is designed to help you get to one of your many projects in your
+preferred code directory.
+
+You can use |:find| to jump to files and open directories, but this plugin is
+designed to help you |:cd| in to the directory quickly instead of open it with
+your favourite directory/file browser.
+
+By default we search for directories in `$HOME/Code`, but this is configurable
+via |g:jump_to_code_base|.
+
+COMMANDS                                        *jump_to_code-commands*
+
+The |:C| command will autocomplete directories in your base directory.
+
+                                                *jump_to_code-:C*
+:C [directory]          Invoke |:cd| or |:lcd| to switch to `directory`.
+
+ vim:tw=78:et:ft=help:norl:
