@@ -10,15 +10,15 @@ describe 'Jump To Code' do
   end
 
   it 'switches directory' do
-    vim.command('C albert')
+    vim.command('JumpToCode albert')
     expect(working_directory).to eq(File.join(fixtures_path, 'albert'))
   end
 
   it 'tab completes' do
     pending 'Being able to send tab keypress'
 
-    vim.feedkeys(':C alb\<C-i>\<CR>')
-    vim.feedkeys(':C n\<C-i>\<CR>')
+    vim.feedkeys(':JumpToCode alb\<C-i>\<CR>')
+    vim.feedkeys(':JumpToCode n\<C-i>\<CR>')
 
     expect(working_directory).to eq(File.join(fixtures_path, 'newton'))
   end
