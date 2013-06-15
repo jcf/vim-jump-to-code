@@ -3,12 +3,14 @@
 Please note, I have replaced the functionality offered by this plugin
 with [Unite.vim][] and the following mapping:
 
+``` vimscript
 " Jump to a project {{{
   map <leader>P :<C-u>execute 'Unite directory:' . expand('~/Code') .
         \ ' directory_mru ' .
         \ '-buffer-name=directories ' .
         \ '-start-insert -toggle -default-action=cd'<CR>
 " }}}
+```
 
 **As such I won't be actively developing this plugin. I urge you to check
 out Unite.vim instead!**
